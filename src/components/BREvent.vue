@@ -3,18 +3,21 @@
     <v-card elevation="18" hover tile dark>
       <v-card-title primary-title>
         <div>
-          <h2 class="headline pb-3" >Lorem ipsum #2</h2>
-          <p class="subheading mb-1"><v-icon size="20">place</v-icon>Rua Benjamin Constant 48, Glória - RJ</p>
-          <p class="mb-1"><v-icon size="20">calendar_today</v-icon> 06/09/1993</p>
-          <h4><v-icon size="20">alarm</v-icon> 14h~22h</h4>
+          <h2 class="headline pb-3" >{{this.event.Titulo}}</h2>
+          <p class="subheading mb-1">
+            <v-icon size="20">place</v-icon>
+            {{this.event.Local}}
+          </p>
+          <p class="mb-1"><v-icon size="20">calendar_today</v-icon> {{this.event.Data}}</p>
+          <h4><v-icon size="20">alarm</v-icon> {{this.event.Horario}}</h4>
         </div>
       </v-card-title>
       <v-divider light></v-divider>
       <v-card-actions>
-        <a href="#" class="no-decoration">
+        <a :href="this.event.URLInscricao" class="no-decoration" v-if="this.event.URLInscricao">
           <v-btn flat color="orange">Mais Informações</v-btn>
         </a>
-        <a href="#" class="no-decoration">
+        <a :href="this.event.URLStream" class="no-decoration" v-if="this.event.URLStream">
           <v-btn flat color="orange">Stream</v-btn>
         </a>
       </v-card-actions>
@@ -24,9 +27,9 @@
 
 <script>
 export default {
-  name: 'BREvent'
-}
+  name: 'BREvent',
+  props: {
+    event: Object,
+  },
+};
 </script>
-
-
-

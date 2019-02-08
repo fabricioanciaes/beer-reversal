@@ -13,6 +13,6 @@ export default {
   name: 'BRSection',
   props: {
     color: String,
-  }
-}
+  },
+};
 </script>

@@ -1,16 +1,16 @@
 <script>
 export default {
   name: 'BRNavbar',
-  data(){
+  data() {
     return {
       menu: [
-        {name: 'Home', path: '/', id:1},
-        {name: 'Eventos', path: '/eventos', id:2},
-        {name: 'Sobre', path: '/sobre', id:3}
+        { name: 'Home', path: '/', id: 1 },
+        { name: 'Eventos', path: '/eventos', id: 2 },
+        { name: 'Sobre', path: '/sobre', id: 3 },
       ],
-      drawer: null
-    }
-  }
+      drawer: null,
+    };
+  },
 };
 </script>
 
@@ -36,8 +36,12 @@ export default {
 
     <v-divider></v-divider>
       <v-list>
-          <router-link :to="link.path" v-for="link in menu" :key="link.id" class="no-decoration">
-            <v-list-tile @click="" >
+          <router-link
+          :to="link.path"
+          v-for="link in menu"
+          :key="link.id"
+          class="no-decoration">
+            <v-list-tile>
                 <v-list-tile-action >
                     {{link.name}}
                 </v-list-tile-action>
@@ -52,13 +56,19 @@ export default {
     </v-toolbar-title>
     </router-link>
     <v-spacer></v-spacer>
-    <router-link v-for="link in menu" :key="link.id" :to="link.path" class="hidden-xs-only no-decoration">
+    <router-link
+    v-for="link in menu"
+    :key="link.id"
+    :to="link.path"
+    class="hidden-xs-only no-decoration">
       <v-btn flat>
         <span class="mr-2">{{link.name}}</span>
       </v-btn>
     </router-link>
-    <v-toolbar-side-icon @click.stop="drawer = !drawer" class="hidden-sm-and-up"></v-toolbar-side-icon>
+    <v-toolbar-side-icon
+    @click.stop="drawer = !drawer"
+    class="hidden-sm-and-up">
+    </v-toolbar-side-icon>
   </v-toolbar>
 </div>
 </template>
-

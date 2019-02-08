@@ -14,9 +14,7 @@ export default {
     bg: String,
     text: String,
   },
-  data: () => {
-    return {}
-  },
+  data: () => ({}),
 };
 </script>
 
